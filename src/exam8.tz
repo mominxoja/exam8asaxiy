@@ -1,0 +1,92 @@
+
+
+sign-Up username va password
+ keladi bodydan usernamesi va
+  passwordi tekshiriladi shunday 
+  user bormi deb new user yaratib
+   users tablega qoshadi va newuser
+    idsidan access_token, refresh_token
+     genneratsiya qiladi va response qiladi.
+
+
+
+
+sign-In username va password
+ keladi bodydan usernamesi va
+ passwordi check qilinadi shunday 
+  user bormi deb. access_token, refresh_token
+     genneratsiya qiladi va response qiladi.
+
+
+
+
+sign-Out token keladi headersdan. 
+undan verify qilib id olinadi. shu 
+idli user topiladi tekshiriladi deleted_at
+ nullmi deb. agar user bosa  deleted_at
+  CURRENT_TIMESTAMP user bomasa token invalid.
+
+
+
+progile get token keldi id topildi
+ user topildi response user.
+
+
+
+profile patch token keldi role email birthday keldi 
+tokendan id olindi shu userga UPDATE boldi.
+
+
+
+profile delete token keldi id olindi deleted_at
+ CURRENT_TIMESTAMP va ordersdagi user_id = id
+  orderlar delete boladi.
+
+
+
+
+refresh refreshtoken keldi undan id olindi
+ token generatsiya boldi.
+users_devicesga saqlandi 
+
+
+
+
+createProduct  token keldi id olindi agar u adminning 
+idga teng bomasa product qoshilmaydi.
+
+
+
+getProduct token keldi pageSize, pageNumber keldi 
+tokenni idsi bosa 
+response product
+bomasa invalid token
+
+
+
+
+getProductbyid  token keldictepadila boldi, paramsdan 
+id keldi shu idli product response boldi
+
+
+
+getProductbycategory category togri yozilishi kerak 
+shunda shu katgoriydagi product response
+
+
+
+
+getProductsearch search text keldi agar u product
+ titlesiga category namesiga yoki sub_category_namega 
+ togri kesa product response
+
+
+
+
+ postorder token keldi id olindi product id bodydan 
+ keldi ordersga userid va product id saqlanadi
+
+
+getorder token keldi id olindi agar id admin idga
+ teng bosa hamma order, teng bomasa shu idli user 
+ orderi response
